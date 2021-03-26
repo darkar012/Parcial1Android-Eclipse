@@ -45,19 +45,19 @@ public class TcpConnection extends Thread{
 			InputStream is = socket.getInputStream();
 			OutputStream os = socket.getOutputStream();
 
-			// Hacer que el objeto is tenga la capacidad de leer Strings completos
+			
 			InputStreamReader isr = new InputStreamReader(is);
 			BufferedReader breader = new BufferedReader(isr);
 
 			while (true) {
-				// Esperando mensaje
+				
 				System.out.println("Esperando mensaje...");
-				String mensajeRecibido = breader.readLine(); //BW::X::Y::ALTO::ANCHO
+				String mensajeRecibido = breader.readLine(); 
 				System.out.println(mensajeRecibido);
 
 				Gson gson = new Gson();
 
-				//Deserializacion
+				
 				recordatorio = gson.fromJson(mensajeRecibido, String.class);
 				OML.OnMessage(recordatorio);
 			}

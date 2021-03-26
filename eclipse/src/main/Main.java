@@ -20,7 +20,7 @@ public class Main extends PApplet implements OnMessageListener{
 		size(800, 600);
 	}
 
-	// 1
+	
 	public void setup() {
 		tcp = TcpConnection.getInstance();
 		tcp.setObserver(this);
